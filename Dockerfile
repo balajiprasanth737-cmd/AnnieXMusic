@@ -10,6 +10,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -U pip && \
     pip install --no-cache-dir -r requirements.txt
+RUN pip install -U --no-cache-dir yt-dlp
 
 COPY . .
 CMD python3 -m http.server 10000 & python3 -m AnnieXMedia
