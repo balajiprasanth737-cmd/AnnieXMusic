@@ -10,7 +10,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -U pip && \
     pip install --no-cache-dir -r requirements.txt
-RUN pip install -U --no-cache-dir yt-dlp
+RUN pip install -U --no-cache-dir --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
 
 COPY . .
 CMD python3 -m http.server 10000 & python3 -m AnnieXMedia
